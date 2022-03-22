@@ -251,7 +251,7 @@ EFS
 
 
 
-refer:
+Referance:
 
 WooCommerce 中文教學：安裝設定＋功能介紹（完整指南）
 <https://frankknow.com/woocommerce-tutorial/>

@@ -12,7 +12,10 @@ return [Summary](#summary)
   - [AWS settings](#aws-settings)
   - [wordpress document](#wordpress-document)
   - [note](#note)
+  - [工作日誌](#工作日誌)
+  - [會議記錄](#會議記錄)
   - [online](#online)
+  - [Referance](#referance)
 
 -----
 
@@ -39,10 +42,10 @@ IAM 1.系統 2.用戶
 ## 成員
 return [Summary](#summary)
 
-> (6)柴道*
-> (3)謝宜*
-> (10)張*富
-> (2)董于*
+> (6)柴道\*
+> (3)謝宜\*
+> (10)張\*富
+> (2)董于\*
 
 [new_user_credentials.csv(已變更)](./assets/new_user_credentials.csv)
 
@@ -125,7 +128,23 @@ ELB 負載均衡
 
 
 
+-----
 
+## 工作日誌
+return [Summary](#summary)
+
+> [工作日誌](./assets/工作日誌.md)
+
+
+-----
+
+## 會議記錄
+return [Summary](#summary)
+
+> [會議記錄](./assets/會議記錄.md)
+
+
+-----
 
 ## online
 return [Summary](#summary)
@@ -134,9 +153,9 @@ return [Summary](#summary)
 
 
 
+-----
 
+## Referance
 
-
-
-
+[AWS雲端經典架構建置WordPress網站 (參考資料1)](assets/AWS雲端經典架構建置WordPress網站(參考資料1).md)
 
