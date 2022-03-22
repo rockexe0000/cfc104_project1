@@ -7,8 +7,10 @@ return [Summary](#summary)
   - [Summary](#summary)
   - [成員](#成員)
   - [AWS console URL](#aws-console-url)
-  - [AWS and GCP service mapping](#aws-and-gcp-service-mapping)
   - [資源命名規則(含Tag)](#資源命名規則含tag)
+  - [CI/CD](#cicd)
+  - [AWS and GCP service mapping](#aws-and-gcp-service-mapping)
+  - [Architecture Diagram](#architecture-diagram)
   - [AWS settings](#aws-settings)
   - [wordpress document](#wordpress-document)
   - [note](#note)
@@ -59,25 +61,6 @@ return [Summary](#summary)
 
 -----
 
-## AWS and GCP service mapping
-return [Summary](#summary)
-
-功能|AWS 服務|GCP 服務
--|-|-
-DNS 服務|Route 53|Cloud DNS
-伺服器|EC2 (Elastic Compute Cloud)|Compute Engine
-資料庫|RDS (Relational Database Service)|Cloud SQL
-儲存|S3 (Simple Storage Service)|Cloud Storage
-權限管理|IAM (Identity and Access Management)|IAM
-人員稽核|CloudTrail|
-系統監控|CloudWatch|Cloud Monitoring
-程式碼儲存庫|CodeCommit|Cloud Source Repositories 
-程式碼編譯、建構|CodeBuild|Cloud Build
-佈署|Code Deploy|Cloud Deploy
-容器儲存庫|ECR (Elastic Container Registry)|Container Registry
-
------
-
 ## 資源命名規則(含Tag)
 return [Summary](#summary)
 
@@ -88,6 +71,41 @@ return [Summary](#summary)
 > 使用人員: 10<br>
 > 應用或用途: wordpress<br>
 > 備註: test<br>
+
+-----
+
+## CI/CD
+
+https://dev.classmethod.jp/articles/aws-hands-on-for-beginners-cicd/
+
+-----
+
+## AWS and GCP service mapping
+return [Summary](#summary)
+
+功能|AWS 服務|GCP 服務
+-|-|-
+DNS 服務|Route 53|Cloud DNS
+伺服器|EC2 (Elastic Compute Cloud)|Compute Engine
+資料庫|RDS (Relational Database Service)|Cloud SQL
+儲存|S3 (Simple Storage Service)|Cloud Storage
+權限管理|IAM (Identity and Access Management)|IAM
+人員稽核|CloudTrail|Cloud Audit Logs
+系統監控|CloudWatch|Cloud Monitoring
+流程管理|CodePipeline|Cloud Source Repositories
+程式碼儲存庫|CodeCommit|Cloud Source Repositories 
+程式碼編譯、建構|CodeBuild|Cloud Build
+佈署|Code Deploy|Cloud Deploy
+容器儲存庫|ECR (Elastic Container Registry)|Container Registry
+
+> https://comparecloud.in/?fbclid=IwAR3ACOiRt23TB8E7ncLsmDSDSHbTF4YxMIymT2rJWwusZfgMVYX1TPVwl0M
+
+-----
+
+## Architecture Diagram
+return [Summary](#summary)
+
+> ![project-AWS-Architecture.svg](./assets/fig/project-AWS-Architecture.svg)
 
 -----
 
@@ -156,6 +174,7 @@ return [Summary](#summary)
 -----
 
 ## Referance
+return [Summary](#summary)
 
 [AWS雲端經典架構建置WordPress網站 (參考資料1)](assets/AWS雲端經典架構建置WordPress網站(參考資料1).md)
 
