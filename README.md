@@ -28,24 +28,52 @@ IAM 1.系統 2.用戶
 
 
 -----
+## AWS console URL
+><https://726526211588.signin.aws.amazon.com/console>
+><https://cfc104-project01.signin.aws.amazon.com/console>
 
 
-<https://726526211588.signin.aws.amazon.com/console>
+## AWS && GCP 服務對應
 
-OR
+功能|AWS 服務|GCP 服務
+-|-|-
+DNS 服務|Route 53|Cloud DNS
+伺服器|EC2 (Elastic Compute Cloud)|Compute Engine
+資料庫|RDS (Relational Database Service)|Cloud SQL
+儲存|S3 (Simple Storage Service)|Cloud Storage
+權限管理|IAM (Identity and Access Management)|IAM
+人員稽核|CloudTrail|
+系統監控|CloudWatch|Cloud Monitoring
+程式碼儲存庫|CodeCommit|Cloud Source Repositories 
+程式碼編譯、建構|CodeBuild|Cloud Build
+佈署|Code Deploy|Cloud Deploy
+容器儲存庫|ECR (Elastic Container Registry)|Container Registry
 
-<https://cfc104-project01.signin.aws.amazon.com/console>
+## 資源命名規則(含Tag)
+>{專案名稱}-{資源名稱}-{使用人員}-{應用或用途}-{備註(非必要)}
+※例如: cfc104_project1-EC2-10-wordpress-test
+專案名稱: cfc104_project1
+資源名稱: EC2
+使用人員: 10
+應用或用途: wordpress
+備註: test
+
+
+
+## AWS settings
+>[AWS-settings](./assets/AWS-settings)
+
+## wordpress document
+>[wordpress](./assets/wordpress)
 
 
 
 
-[wordpress](./assets/wordpress)
 
-WooCommerce 中文教學：安裝設定＋功能介紹（完整指南）
-https://frankknow.com/woocommerce-tutorial/
+## note
 
-架設購物網站＋建置設計：WordPress 網路開店平台＋製作教學（Astra）
-https://frankknow.com/build-shop-online/
+
+SystemAdministrator
 
 
 wordpress 多媒體存 S3
@@ -56,10 +84,6 @@ ELB 負載均衡
 
 
 
-
-[aws-IAM](./assets/aws-IAM.md)
-
-[aws-EC2](./assets/aws-EC2.md)
 
 
 

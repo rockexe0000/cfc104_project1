@@ -6,19 +6,21 @@
 ## Summary
 return [Summary](#summary)
 
-
 - [Summary](#summary)
-- [Group](#group)
-- [User](#user)
-- [Account Alias](#account-alias)
-- [Billing Alarms](#billing-alarms)
+- [IAM](#iam)
+  - [Group](#group)
+  - [User](#user)
+  - [Account Alias](#account-alias)
+  - [Billing Alarms](#billing-alarms)
+- [EC2](#ec2)
 
 
 
 
+## IAM
+return [Summary](#summary)
 
-
-## Group
+### Group
 return [Summary](#summary)
 
 ![image20220317110912.png](./fig/image20220317110912.png)
@@ -36,7 +38,7 @@ return [Summary](#summary)
 
 -----
 
-## User
+### User
 return [Summary](#summary)
 
 ![image20220317132219.png](./fig/image20220317132219.png)
@@ -58,7 +60,7 @@ return [Summary](#summary)
 ![image20220317133333.png](./fig/image20220317133333.png)
 
 -----
-## Account Alias
+### Account Alias
 return [Summary](#summary)
 
 cfc104-project01
@@ -71,7 +73,7 @@ cfc104-project01
 
 -----
 
-## Billing Alarms
+### Billing Alarms
 return [Summary](#summary)
 
 ![image20220317163239.png](./fig/image20220317163239.png)
@@ -109,12 +111,36 @@ return [Summary](#summary)
 ![image20220317184141.png](./fig/image20220317184141.png)
 
 
----
+-----
 
 
+## EC2
+return [Summary](#summary)
 
+![](fig/image20220319082743.png)
 
-SystemAdministrator
+![](fig/20220320151315.png)
+
+![](fig/20220320151332.png)
+
+![](fig/20220320151400.png)
+
+![](fig/20220320151420.png)
+
+![](fig/20220320151728.png)
+
+![](fig/20220320151804.png)
+
+![](fig/20220320151912.png)
+
+![](fig/20220320152014.png)
+
+![](fig/20220320152507.png)
+
+![](fig/20220320152550.png)
+
+![](fig/20220320152646.png)
+
 
 
 

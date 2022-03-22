@@ -160,21 +160,14 @@ git push -u origin main
 3.91.203.122
 
 
-
-refer:
-
-WooCommerce 中文教學：安裝設定＋功能介紹（完整指南）
-<https://frankknow.com/woocommerce-tutorial/>
-
-
-WordPress 後台教學：給新手的操作教學（全指南）
-<https://www.youtube.com/watch?v=oPk3jqZ7wkw>
-
-WordPress 網頁設計教學：如何架設網站＋完整官網製作（不懂程式也做得到）
-<https://www.youtube.com/watch?v=5aI53lSJLcQ>
-
 -----
 
+
+
+
+
+
+## note
 
 
 
@@ -255,3 +248,17 @@ EFS
 
 
 
+
+
+
+refer:
+
+WooCommerce 中文教學：安裝設定＋功能介紹（完整指南）
+<https://frankknow.com/woocommerce-tutorial/>
+
+
+WordPress 後台教學：給新手的操作教學（全指南）
+<https://www.youtube.com/watch?v=oPk3jqZ7wkw>
+
+WordPress 網頁設計教學：如何架設網站＋完整官網製作（不懂程式也做得到）
+<https://www.youtube.com/watch?v=5aI53lSJLcQ>
