@@ -1,5 +1,22 @@
 # 第一組-雲端經典架構(WordPress)
 
+
+
+## Summary
+return [Summary](#summary)
+
+- [第一組-雲端經典架構(WordPress)](#第一組-雲端經典架構wordpress)
+  - [Summary](#summary)
+  - [成員](#成員)
+  - [AWS console URL](#aws-console-url)
+  - [AWS and GCP service mapping](#aws-and-gcp-service-mapping)
+  - [資源命名規則(含Tag)](#資源命名規則含tag)
+  - [AWS settings](#aws-settings)
+  - [wordpress document](#wordpress-document)
+  - [note](#note)
+  - [online](#online)
+
+
 ![各組專題架構.jpg](./assets/fig/各組專題架構.jpg)
 ![白板.jpg](./assets/fig/白板.jpg)
 
@@ -18,22 +35,26 @@ IAM 1.系統 2.用戶
 在aws或gcp上應用經典架構
 在aws或gcp上架wordpress網站
 
+## 成員
+return [Summary](#summary)
 
-
-(6)柴道融
-(3)謝宜庭
-(10)張再富
-(2)董于嘉
+> (6)柴道融
+> (3)謝宜庭
+> (10)張再富
+> (2)董于嘉
 
 
 
 -----
 ## AWS console URL
+return [Summary](#summary)
+
 > <https://726526211588.signin.aws.amazon.com/console><br>
 > <https://cfc104-project01.signin.aws.amazon.com/console><br>
 
 
-## AWS && GCP 服務對應
+## AWS and GCP service mapping
+return [Summary](#summary)
 
 功能|AWS 服務|GCP 服務
 -|-|-
@@ -51,6 +72,7 @@ DNS 服務|Route 53|Cloud DNS
 
 
 ## 資源命名規則(含Tag)
+return [Summary](#summary)
 
 > {專案名稱}-{資源名稱}-{使用人員}-{應用或用途}-{備註(非必要)}<br>
 > ※例如: cfc104_project1-EC2-10-wordpress-test<br>
@@ -63,9 +85,13 @@ DNS 服務|Route 53|Cloud DNS
 
 
 ## AWS settings
-> [AWS-settings](./assets/AWS-settings)
+return [Summary](#summary)
+
+> [AWS-settings](assets/AWS-settings)
 
 ## wordpress document
+return [Summary](#summary)
+
 > [wordpress](./assets/wordpress)
 
 
@@ -73,7 +99,7 @@ DNS 服務|Route 53|Cloud DNS
 
 
 ## note
-
+return [Summary](#summary)
 
 SystemAdministrator
 
@@ -95,52 +121,10 @@ ELB 負載均衡
 
 
 
+## online
+return [Summary](#summary)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[this](https://github.com/rockexe0000/cfc104_project1)
 
 
 
