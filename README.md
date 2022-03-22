@@ -87,12 +87,12 @@ return [Summary](#summary)
 ## AWS settings
 return [Summary](#summary)
 
-> [AWS-settings](assets/AWS-settings)
+> [AWS-settings](assets/AWS-settings.md)
 
 ## wordpress document
 return [Summary](#summary)
 
-> [wordpress](./assets/wordpress)
+> [wordpress](./assets/wordpress.md)
 
 
 
