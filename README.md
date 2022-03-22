@@ -1,7 +1,5 @@
 # 第一組-雲端經典架構(WordPress)
 
-
-
 ## Summary
 return [Summary](#summary)
 
@@ -16,6 +14,7 @@ return [Summary](#summary)
   - [note](#note)
   - [online](#online)
 
+-----
 
 ![各組專題架構.jpg](./assets/fig/各組專題架構.jpg)
 ![白板.jpg](./assets/fig/白板.jpg)
@@ -35,23 +34,27 @@ IAM 1.系統 2.用戶
 在aws或gcp上應用經典架構
 在aws或gcp上架wordpress網站
 
+-----
+
 ## 成員
 return [Summary](#summary)
 
-> (6)柴道融
-> (3)謝宜庭
-> (10)張再富
-> (2)董于嘉
+> (6)柴道*
+> (3)謝宜*
+> (10)張*富
+> (2)董于*
 
-
+[new_user_credentials.csv(已變更)](./assets/new_user_credentials.csv)
 
 -----
+
 ## AWS console URL
 return [Summary](#summary)
 
 > <https://726526211588.signin.aws.amazon.com/console><br>
 > <https://cfc104-project01.signin.aws.amazon.com/console><br>
 
+-----
 
 ## AWS and GCP service mapping
 return [Summary](#summary)
@@ -70,6 +73,7 @@ DNS 服務|Route 53|Cloud DNS
 佈署|Code Deploy|Cloud Deploy
 容器儲存庫|ECR (Elastic Container Registry)|Container Registry
 
+-----
 
 ## 資源命名規則(含Tag)
 return [Summary](#summary)
@@ -82,12 +86,14 @@ return [Summary](#summary)
 > 應用或用途: wordpress<br>
 > 備註: test<br>
 
-
+-----
 
 ## AWS settings
 return [Summary](#summary)
 
 > [AWS-settings](assets/AWS-settings.md)
+
+-----
 
 ## wordpress document
 return [Summary](#summary)
@@ -96,7 +102,7 @@ return [Summary](#summary)
 
 
 
-
+-----
 
 ## note
 return [Summary](#summary)
@@ -124,7 +130,7 @@ ELB 負載均衡
 ## online
 return [Summary](#summary)
 
-[this](https://github.com/rockexe0000/cfc104_project1)
+[this page](https://github.com/rockexe0000/cfc104_project1)
 
 
 
