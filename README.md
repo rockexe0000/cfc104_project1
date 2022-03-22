@@ -29,8 +29,8 @@ IAM 1.系統 2.用戶
 
 -----
 ## AWS console URL
-><https://726526211588.signin.aws.amazon.com/console>
-><https://cfc104-project01.signin.aws.amazon.com/console>
+> <https://726526211588.signin.aws.amazon.com/console><br>
+> <https://cfc104-project01.signin.aws.amazon.com/console><br>
 
 
 ## AWS && GCP 服務對應
@@ -49,22 +49,24 @@ DNS 服務|Route 53|Cloud DNS
 佈署|Code Deploy|Cloud Deploy
 容器儲存庫|ECR (Elastic Container Registry)|Container Registry
 
+
 ## 資源命名規則(含Tag)
->{專案名稱}-{資源名稱}-{使用人員}-{應用或用途}-{備註(非必要)}
-※例如: cfc104_project1-EC2-10-wordpress-test
-專案名稱: cfc104_project1
-資源名稱: EC2
-使用人員: 10
-應用或用途: wordpress
-備註: test
+
+> {專案名稱}-{資源名稱}-{使用人員}-{應用或用途}-{備註(非必要)}<br>
+> ※例如: cfc104_project1-EC2-10-wordpress-test<br>
+> 專案名稱: cfc104_project1<br>
+> 資源名稱: EC2<br>
+> 使用人員: 10<br>
+> 應用或用途: wordpress<br>
+> 備註: test<br>
 
 
 
 ## AWS settings
->[AWS-settings](./assets/AWS-settings)
+> [AWS-settings](./assets/AWS-settings)
 
 ## wordpress document
->[wordpress](./assets/wordpress)
+> [wordpress](./assets/wordpress)
 
 
 
