@@ -5,11 +5,11 @@
 ## Summary
 return [Summary](#summary)
 - [Summary](#summary)
-- [Dockerfile](#dockerfile)
+- [Docker image](#docker-image)
 - [Git](#git)
   - [create a new repository on the command line](#create-a-new-repository-on-the-command-line)
   - [push an existing repository from the command line](#push-an-existing-repository-from-the-command-line)
-- [note](#note)
+- [Note](#note)
 
 
 
@@ -95,7 +95,7 @@ http://<CentOS的IP>
 http://192.168.211.142/wp-admin/
 
 
-## Dockerfile
+## Docker image
 return [Summary](#summary)
 
 
@@ -207,7 +207,7 @@ git push -u origin main
 
 
 
-## note
+## Note
 return [Summary](#summary)
 
 
