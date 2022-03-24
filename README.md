@@ -14,7 +14,7 @@ return [Summary](#summary)
     - [AWS](#aws)
   - [AWS settings](#aws-settings)
   - [wordpress document](#wordpress-document)
-  - [note](#note)
+  - [Note](#note)
   - [Work log](#work-log)
   - [Meeting minutes](#meeting-minutes)
   - [Online](#online)
@@ -65,11 +65,11 @@ return [Summary](#summary)
 ## Resource naming rules (including tags)
 return [Summary](#summary)
 
-> {專案名稱}-{資源名稱}-{使用人員}-{應用或用途}-{備註(非必要)}<br>
+> {專案名稱}-{資源名稱}-{使用者ID(人員/群組/其他服務)}-{應用或用途}-{備註(非必要)}<br>
 > ※例如: cfc104_project1-EC2-10-wordpress-test<br>
 > 專案名稱: cfc104_project1<br>
 > 資源名稱: EC2<br>
-> 使用人員: 10<br>
+> 使用者ID: 10<br>
 > 應用或用途: wordpress<br>
 > 備註: test<br>
 
@@ -127,7 +127,7 @@ return [Summary](#summary)
 
 -----
 
-## note
+## Note
 return [Summary](#summary)
 
 [test to wordpress.md#note](assets/wordpress.md#note)
@@ -155,7 +155,7 @@ ELB 負載均衡
 ## Work log
 return [Summary](#summary)
 
-> [Work log](./assets/工作日誌.md)
+> [Work log](./assets/WorkLog.md)
 
 
 -----
@@ -163,7 +163,7 @@ return [Summary](#summary)
 ## Meeting minutes
 return [Summary](#summary)
 
-> [Meeting minutes](./assets/會議記錄.md)
+> [Meeting minutes](./assets/MeetingMinutes.md)
 
 
 -----
