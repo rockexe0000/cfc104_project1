@@ -130,7 +130,7 @@ return [Summary](#summary)
 ## note
 return [Summary](#summary)
 
-[test to wordpress.md#summary](assets/wordpress.md#summary)
+[test to wordpress.md#note](assets/wordpress.md#note)
 
 SystemAdministrator
 

@@ -2,7 +2,14 @@
 
 
 
-
+## Summary
+return [Summary](#summary)
+- [Summary](#summary)
+- [Dockerfile](#dockerfile)
+- [Git](#git)
+  - [create a new repository on the command line](#create-a-new-repository-on-the-command-line)
+  - [push an existing repository from the command line](#push-an-existing-repository-from-the-command-line)
+- [note](#note)
 
 
 
@@ -89,7 +96,7 @@ http://192.168.211.142/wp-admin/
 
 
 ## Dockerfile
-
+return [Summary](#summary)
 
 
 
@@ -158,11 +165,17 @@ docker-compose up -d
 
 
 -----
+
+## Git
+return [Summary](#summary)
+
 git clone https://github.com/rockexe0000/my_wordpress.git
 
 
 
-### …or create a new repository on the command line
+### create a new repository on the command line
+return [Summary](#summary)
+
 ```
 echo "# my_wordpress" >> README.md
 git init
@@ -174,7 +187,9 @@ git push -u origin main
 ```
 
 
-### …or push an existing repository from the command line
+### push an existing repository from the command line
+return [Summary](#summary)
+
 ```
 git remote add origin https://github.com/rockexe0000/my_wordpress.git
 git branch -M main
@@ -193,7 +208,7 @@ git push -u origin main
 
 
 ## note
-
+return [Summary](#summary)
 
 
 EFS
