@@ -113,6 +113,25 @@ docker run
 
 ec2 User data
 ```
+Content-Type: multipart/mixed; boundary="//"
+MIME-Version: 1.0
+
+--//
+Content-Type: text/cloud-config; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="cloud-config.txt"
+
+#cloud-config
+cloud_final_modules:
+- [scripts-user, always]
+
+--//
+Content-Type: text/x-shellscript; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="userdata.txt"
+
 #!/bin/bash
 yum update -y
 amazon-linux-extras install -y docker
@@ -125,11 +144,17 @@ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 yum install git -y
 git clone https://github.com/rockexe0000/my_wordpress
+git pull
 cd my_wordpress 
+docker-compose pull
 docker-compose up -d
 ```
 
+如何使用 docker-compose 更新現有圖像？
+<https://stackoverflow.com/questions/49316462/how-to-update-existing-images-with-docker-compose>
 
+如何讓 EC2 用戶數據腳本在啟動時再次運行？
+<https://serverfault.com/questions/797482/how-to-make-ec2-user-data-script-run-again-on-startup>
 
 
 -----

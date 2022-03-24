@@ -5,18 +5,19 @@ return [Summary](#summary)
 
 - [第一組-雲端經典架構(WordPress)](#第一組-雲端經典架構wordpress)
   - [Summary](#summary)
-  - [成員](#成員)
+  - [Members](#members)
   - [AWS console URL](#aws-console-url)
-  - [資源命名規則(含Tag)](#資源命名規則含tag)
+  - [Resource naming rules (including tags)](#resource-naming-rules-including-tags)
   - [CI/CD](#cicd)
   - [AWS and GCP service mapping](#aws-and-gcp-service-mapping)
   - [Architecture Diagram](#architecture-diagram)
+    - [AWS](#aws)
   - [AWS settings](#aws-settings)
   - [wordpress document](#wordpress-document)
   - [note](#note)
-  - [工作日誌](#工作日誌)
-  - [會議記錄](#會議記錄)
-  - [online](#online)
+  - [Work log](#work-log)
+  - [Meeting minutes](#meeting-minutes)
+  - [Online](#online)
   - [Referance](#referance)
 
 -----
@@ -41,7 +42,7 @@ IAM 1.系統 2.用戶
 
 -----
 
-## 成員
+## Members
 return [Summary](#summary)
 
 > (6)柴道\*
@@ -61,7 +62,7 @@ return [Summary](#summary)
 
 -----
 
-## 資源命名規則(含Tag)
+## Resource naming rules (including tags)
 return [Summary](#summary)
 
 > {專案名稱}-{資源名稱}-{使用人員}-{應用或用途}-{備註(非必要)}<br>
@@ -105,6 +106,7 @@ DNS 服務|Route 53|Cloud DNS
 ## Architecture Diagram
 return [Summary](#summary)
 
+### AWS
 > ![project-AWS-Architecture.svg](./assets/fig/project-AWS-Architecture.svg)
 
 -----
@@ -128,6 +130,8 @@ return [Summary](#summary)
 ## note
 return [Summary](#summary)
 
+[test to wordpress.md#summary](assets/wordpress.md#summary)
+
 SystemAdministrator
 
 
@@ -148,23 +152,23 @@ ELB 負載均衡
 
 -----
 
-## 工作日誌
+## Work log
 return [Summary](#summary)
 
-> [工作日誌](./assets/工作日誌.md)
+> [Work log](./assets/工作日誌.md)
 
 
 -----
 
-## 會議記錄
+## Meeting minutes
 return [Summary](#summary)
 
-> [會議記錄](./assets/會議記錄.md)
+> [Meeting minutes](./assets/會議記錄.md)
 
 
 -----
 
-## online
+## Online
 return [Summary](#summary)
 
 [this page](https://github.com/rockexe0000/cfc104_project1)
