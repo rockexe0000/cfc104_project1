@@ -24,6 +24,7 @@ return [Summary](#summary)
 
 ![各組專題架構.jpg](./assets/fig/各組專題架構.jpg)
 ![白板.jpg](./assets/fig/白板.jpg)
+![簡報搞.jpg](./assets/fig/ScreenShot2022-03-30at9.49.17AM.png)
 
 不用碰程式
 全都在課程內容內
@@ -141,7 +142,7 @@ CDN
 
 ELB 負載均衡
 
-
+https://medium.com/tensult/configure-ftp-on-aws-ec2-85b5b56b9c94
 
 
 

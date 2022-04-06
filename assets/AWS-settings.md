@@ -15,6 +15,17 @@ return [Summary](#summary)
 - [EC2](#ec2)
 - [ECR](#ecr)
 - [RDS](#rds)
+- [VPC](#vpc)
+  - [internet gateway](#internet-gateway)
+  - [igw attach to VPC](#igw-attach-to-vpc)
+  - [subnet](#subnet)
+    - [public subnet](#public-subnet)
+    - [private subnet](#private-subnet)
+  - [NAT gateway for private subnet](#nat-gateway-for-private-subnet)
+  - [route table](#route-table)
+  - [route table for private subnet](#route-table-for-private-subnet)
+  - [test ssh 172.16.0.10 ->172.16.101.10](#test-ssh-17216010--1721610110)
+- [godaddy DNS 管理](#godaddy-dns-管理)
 
 
 
@@ -167,7 +178,279 @@ return [Summary](#summary)
 ## RDS
 return [Summary](#summary)
 
+使用在 Amazon RDS 外部運行的 MariaDB 或 MySQL 實例進行複制
+<https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.External.Repl.html>
+
 ![](fig/20220323200947.png)
+
+![](fig/20220324135054.png)
+
+![](fig/20220324135218.png)
+
+![](fig/20220324140001.png)
+
+![](fig/20220324140957.png)
+
+![](fig/20220324141027.png)
+
+![](fig/20220324141050.png)
+
+![](fig/20220324141147.png)
+
+![](fig/20220324141859.png)
+
+
+
+
+## VPC
+return [Summary](#summary)
+
+參考: [VPC的建立V2.pdf](VPC的建立V2.pdf)
+
+![](fig/20220328210743.png)
+
+![](fig/20220328211148.png)
+
+![](fig/20220328212149.png)
+
+![](fig/20220328212218.png)
+
+
+### internet gateway
+return [Summary](#summary)
+
+![](fig/20220328212948.png)
+
+![](fig/20220328213100.png)
+
+![](fig/20220328213116.png)
+
+### igw attach to VPC
+return [Summary](#summary)
+
+![](fig/20220328213446.png)
+
+![](fig/20220328213527.png)
+
+![](fig/20220328213706.png)
+
+![](fig/20220328213733.png)
+
+
+### subnet
+return [Summary](#summary)
+
+#### public subnet
+return [Summary](#summary)
+
+![](fig/20220329084540.png)
+
+![](fig/20220329090351.png)
+
+![](fig/20220329090650.png)
+
+
+#### private subnet
+return [Summary](#summary)
+
+![](fig/20220329091120.png)
+
+![](fig/20220329091046.png)
+
+![](fig/20220329091359.png)
+
+
+### NAT gateway for private subnet
+return [Summary](#summary)
+
+![](fig/20220329093224.png)
+
+![](fig/20220329093517.png)
+
+![](fig/20220329093546.png)
+
+
+### route table
+return [Summary](#summary)
+
+![](fig/20220329094129.png)
+
+![](fig/20220329094826.png)
+
+![](fig/20220329194656.png)
+
+![](fig/20220329200008.png)
+
+![](fig/20220329200035.png)
+
+![](fig/20220329200831.png)
+
+![](fig/20220329201009.png)
+
+![](fig/20220329201150.png)
+
+![](fig/20220329201330.png)
+
+![](fig/20220329201420.png)
+
+### route table for private subnet
+return [Summary](#summary)
+
+![](fig/20220329201751.png)
+
+![](fig/20220329202031.png)
+
+![](fig/20220329202052.png)
+
+![](fig/20220329202209.png)
+
+![](fig/20220329202301.png)
+
+![](fig/20220329202340.png)
+
+
+
+private route table 中增加 NAT gateway 的位置
+
+![](fig/20220329203204.png)
+
+![](fig/20220329203240.png)
+
+![](fig/20220329204726.png)
+
+![](fig/20220329204751.png)
+
+
+### test ssh 172.16.0.10 ->172.16.101.10
+return [Summary](#summary)
+
+![](fig/20220331091948.png)
+
+
+
+
+## godaddy DNS 管理
+return [Summary](#summary)
+
+![](fig/20220406090821.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
