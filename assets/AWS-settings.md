@@ -26,6 +26,7 @@ return [Summary](#summary)
   - [route table for private subnet](#route-table-for-private-subnet)
   - [test ssh 172.16.0.10 ->172.16.101.10](#test-ssh-17216010--1721610110)
 - [godaddy DNS 管理](#godaddy-dns-管理)
+- [S3](#s3)
 
 
 
@@ -338,7 +339,8 @@ return [Summary](#summary)
 
 
 
-
+## S3
+return [Summary](#summary)
 
 
 

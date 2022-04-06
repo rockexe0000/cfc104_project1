@@ -317,7 +317,7 @@ docker exec mysql-db sh -c 'exec mysqldump --all-databases -uroot -p"123456"' > 
 
 還原(local -> RDS)
 ```
-mysqldump --databases {database_name} \
+docker exec mysql-db sh -c 'mysqldump --databases {database_name} \
     --single-transaction \
     --compress \
     --order-by-primary \
@@ -326,7 +326,7 @@ mysqldump --databases {database_name} \
         --host={hostname} \
         --port=3306 \
         -u {RDS_user_name} \
-        -p{RDS_password}
+        -p{RDS_password}'
 ```
 
 
@@ -465,6 +465,13 @@ https://www.aiprose.com/blog/148
 
 
 https://www.nginx.com/resources/wiki/start/topics/recipes/wordpress/
+
+「SSL for Free」使用DNS(CNAME)驗證的方法
+https://uncleit.net/%E3%80%8Cssl-for-free%E3%80%8D%E4%BD%BF%E7%94%A8dns-cname%E9%A9%97%E8%AD%89%E7%9A%84%E6%96%B9%E6%B3%95.html
+
+
+AWS 提供免費的 SSL 憑證服務！超簡單懶人包看這裡
+https://blog.25sprout.com/aws-%E6%8F%90%E4%BE%9B%E5%85%8D%E8%B2%BB%E7%9A%84-ssl-%E6%86%91%E8%AD%89%E6%9C%8D%E5%8B%99-%E8%B6%85%E7%B0%A1%E5%96%AE%E6%87%B6%E4%BA%BA%E5%8C%85%E7%9C%8B%E9%80%99%E8%A3%A1-9220e2f5bcdb?gi=bd73527c766d
 
 
 

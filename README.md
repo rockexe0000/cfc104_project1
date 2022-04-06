@@ -12,8 +12,9 @@ return [Summary](#summary)
   - [AWS and GCP service mapping](#aws-and-gcp-service-mapping)
   - [Architecture Diagram](#architecture-diagram)
     - [AWS](#aws)
+  - [Todo list](#todo-list)
   - [AWS settings](#aws-settings)
-  - [wordpress document](#wordpress-document)
+  - [Wordpress document](#wordpress-document)
   - [Note](#note)
   - [Work log](#work-log)
   - [Meeting minutes](#meeting-minutes)
@@ -112,6 +113,43 @@ return [Summary](#summary)
 
 -----
 
+## Todo list
+return [Summary](#summary)
+
+- wordpress set up
+  - [ ] Docker
+    - docker-compose
+    - nginx
+  - [ ] web site
+  - [ ] woocommerce
+
+- AWS set up
+  - [ ] IAM
+  - [ ] VPC
+  - [ ] EC2
+  - [ ] RDS
+  - [ ] ~~S3~~
+  - [ ] Route53(GoDaddy)
+  - [ ] Cloudtrail
+  - [ ] ~~CloudWatch~~
+  - [ ] ~~SSM~~
+
+- GCP set up
+  - [ ] IAM
+  - [ ] VPC
+  - [ ] GCE
+  - [ ] CloudSQL
+  - [ ] ~~Cloud Storage~~
+  - [ ] Cloud DNS(GoDaddy)
+  - [ ] ~~Cloud Audit log~~
+  - [ ] ~~Cloud Monitoring~~
+  - [ ] ~~Opsagent(optional)~~
+
+
+
+
+-----
+
 ## AWS settings
 return [Summary](#summary)
 
@@ -119,7 +157,7 @@ return [Summary](#summary)
 
 -----
 
-## wordpress document
+## Wordpress document
 return [Summary](#summary)
 
 > [wordpress](./assets/wordpress.md)
