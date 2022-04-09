@@ -13,7 +13,7 @@ return [Summary](#summary)
   - [Account Alias](#account-alias)
   - [Billing Alarms](#billing-alarms)
 - [EC2](#ec2)
-- [ECR](#ecr)
+- [ECR(沒用到)](#ecr沒用到)
 - [RDS](#rds)
 - [VPC](#vpc)
   - [internet gateway](#internet-gateway)
@@ -21,12 +21,19 @@ return [Summary](#summary)
   - [subnet](#subnet)
     - [public subnet](#public-subnet)
     - [private subnet](#private-subnet)
-  - [NAT gateway for private subnet](#nat-gateway-for-private-subnet)
+  - [~~NAT gateway for private subnet~~](#nat-gateway-for-private-subnet)
   - [route table](#route-table)
   - [route table for private subnet](#route-table-for-private-subnet)
-  - [test ssh 172.16.0.10 ->172.16.101.10](#test-ssh-17216010--1721610110)
+  - [test ssh 172.16.0.10 -> 172.16.101.10](#test-ssh-17216010---1721610110)
 - [godaddy DNS 管理](#godaddy-dns-管理)
+- [Route53](#route53)
+  - [Route53 private hosted zones add RDS](#route53-private-hosted-zones-add-rds)
 - [S3](#s3)
+  - [Automatically uploads media to Amazon S3](#automatically-uploads-media-to-amazon-s3)
+    - [Properties -> Transfer acceleration -> Enabled](#properties---transfer-acceleration---enabled)
+    - [Permissions -> CORS](#permissions---cors)
+    - [add media-cloud user](#add-media-cloud-user)
+      - [Create policy](#create-policy)
 
 
 
@@ -36,6 +43,12 @@ return [Summary](#summary)
 
 ### Group
 return [Summary](#summary)
+
+參數
+Name | Value
+-|-
+Group name|cfc104_project
+
 
 ![image20220317110912.png](./fig/image20220317110912.png)
 
@@ -54,6 +67,11 @@ return [Summary](#summary)
 
 ### User
 return [Summary](#summary)
+
+參數
+Name | Value
+-|-
+User name|cfc104_02,cfc104_03,cfc104_06,cfc104_10
 
 ![image20220317132219.png](./fig/image20220317132219.png)
 
@@ -77,7 +95,10 @@ return [Summary](#summary)
 ### Account Alias
 return [Summary](#summary)
 
-cfc104-project01
+參數
+Name | Value
+-|-
+Account Alias|cfc104-project01
 
 
 ![image20220317162909.png](./fig/image20220317162909.png)
@@ -131,6 +152,18 @@ return [Summary](#summary)
 ## EC2
 return [Summary](#summary)
 
+參數
+Name | Value
+-|-
+EC2|cfc104-project1-wordpress-ec2-public
+Amazon Machine Image (AMI)|Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type
+Instance Type|t2.micro
+Network|cfc104-project1-wordpress-VPC
+subnet|cfc104-project1-wordpress-subnet-public
+Volume Type|General Purpose SSD (gp2)
+Security Group|cfc104-project1-wordpress-sg-public
+
+
 ![](fig/image20220319082743.png)
 
 ![](fig/20220320151315.png)
@@ -160,7 +193,7 @@ return [Summary](#summary)
 
 -----
 
-## ECR
+## ECR(沒用到)
 return [Summary](#summary)
 
 ![](fig/20220323090557.png)
@@ -178,6 +211,9 @@ return [Summary](#summary)
 
 ## RDS
 return [Summary](#summary)
+
+cfc104-project1-wordpress-rds
+
 
 使用在 Amazon RDS 外部運行的 MariaDB 或 MySQL 實例進行複制
 <https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.External.Repl.html>
@@ -261,7 +297,7 @@ return [Summary](#summary)
 ![](fig/20220329091359.png)
 
 
-### NAT gateway for private subnet
+### ~~NAT gateway for private subnet~~
 return [Summary](#summary)
 
 ![](fig/20220329093224.png)
@@ -322,7 +358,7 @@ private route table 中增加 NAT gateway 的位置
 ![](fig/20220329204751.png)
 
 
-### test ssh 172.16.0.10 ->172.16.101.10
+### test ssh 172.16.0.10 -> 172.16.101.10
 return [Summary](#summary)
 
 ![](fig/20220331091948.png)
@@ -337,99 +373,186 @@ return [Summary](#summary)
 
 
 
+## Route53
+return [Summary](#summary)
+
+cfc104.project1.com
+
+![](fig/20220407144505.png)
+
+![](fig/20220407144555.png)
+
+![](fig/20220407145144.png)
+
+![](fig/20220407145220.png)
+
+### Route53 private hosted zones add RDS
+
+RDS Endpoint
+cfc104-project1-wordpress-rds.cn08hpayvo0z.us-east-1.rds.amazonaws.com
+
+![](fig/20220407150138.png)
+
+![](fig/20220407150621.png)
+
+![](fig/20220407150653.png)
+
 
 
 ## S3
 return [Summary](#summary)
 
 
+cfc104-project1-wordpress-s3
 
+![](fig/20220409094354.png)
 
+![](fig/20220409093024.png)
 
+![](fig/20220409093809.png)
 
+![](fig/20220409093833.png)
 
+![](fig/20220409093849.png)
 
+![](fig/20220409093933.png)
 
 
+### Automatically uploads media to Amazon S3
+return [Summary](#summary)
 
+#### Properties -> Transfer acceleration -> Enabled
+return [Summary](#summary)
 
 
+![](fig/20220409095840.png)
 
+![](fig/20220409100010.png)
 
+![](fig/20220409100030.png)
 
+![](fig/20220409100112.png)
 
+![](fig/20220409100140.png)
 
 
+#### Permissions -> CORS
+return [Summary](#summary)
 
+Getting Started with Amazon S3 and Media Cloud
+<https://www.youtube.com/watch?v=kjFCACrPRtU>
 
+如何在 Amazon S3 中設定 CORS 並使用 cURL 確認 CORS 規則？
+<https://aws.amazon.com/tw/premiumsupport/knowledge-center/s3-configure-cors/>
 
+```
+[
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "GET",
+            "PUT",
+            "POST",
+            "HEAD"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": [],
+        "MaxAgeSeconds": 3000
+    }
+]
+```
 
+![](fig/20220409103603.png)
 
+![](fig/20220409104344.png)
 
+![](fig/20220409104425.png)
 
+![](fig/20220409104446.png)
 
+#### add media-cloud user
+return [Summary](#summary)
 
+cfc104-project1-wordpress-media-cloud
 
 
+![](fig/20220409105658.png)
 
+![](fig/20220409105732.png)
 
+![](fig/20220409105927.png)
 
+![](fig/20220409105959.png)
 
+![](fig/20220409110109.png)
 
+![](fig/20220409131726.png)
 
+![](fig/20220409131800.png)
 
+![](fig/20220409132002.png)
 
+![](fig/20220409132534.png)
 
+![](fig/20220409133203.png)
 
+![](fig/20220409133227.png)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+##### Create policy
+return [Summary](#summary)
+
+
+Sample IAM JSON Policy
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:DeleteObjectTagging",
+                "s3:ListBucketMultipartUploads",
+                "s3:DeleteObjectVersion",
+                "s3:ListBucket",
+                "s3:DeleteObjectVersionTagging",
+                "s3:GetBucketAcl",
+                "s3:ListMultipartUploadParts",
+                "s3:PutObject",
+                "s3:GetObjectAcl",
+                "s3:GetObject",
+                "s3:AbortMultipartUpload",
+                "s3:DeleteObject",
+                "s3:GetBucketLocation",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": [
+                "arn:aws:s3:::cfc104-project1-wordpress-s3/*",
+                "arn:aws:s3:::cfc104-project1-wordpress-s3"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": "s3:HeadBucket",
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+![](fig/20220409110227.png)
+
+![](fig/20220409110735.png)
+
+![](fig/20220409110858.png)
+
+![](fig/20220409111109.png)
+
+![](fig/20220409111134.png)
 
 
 

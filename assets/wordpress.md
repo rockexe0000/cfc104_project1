@@ -547,6 +547,7 @@ sudo vim html/wp-config.php<br>
 後面加入
 ```
 define( 'FS_METHOD', 'direct' );
+define('DISABLE_WP_CRON', true);
 
 @ini_set( 'upload_max_filesize' , '512M' );
 @ini_set( 'post_max_size', '512M');

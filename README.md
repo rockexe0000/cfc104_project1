@@ -116,19 +116,81 @@ return [Summary](#summary)
 ## Todo list
 return [Summary](#summary)
 
+
+
+
+目標
+建立 wordpress 網站並在雲端維運
+
+流程概要
+  1) 本地端建置 wordpress
+  2) 將已完成的 wordpress 網站匯出
+
+
+
+使用者角色
+- wordpress 網站維運人員
+- AWS管理員
+- GCP管理員
+
+
+
+建置步驟
+
+
+
+
+參數
+Name | Value
+-|-
+
+Account Alias|cfc104-project01
+
+Name | Value
+-|-
+Group name|cfc104_project
+User name|cfc104_02, cfc104_03, cfc104_06, cfc104_10
+
+Name | Value
+-|-
+VPC|cfc104-project1-wordpress-VPC
+public subnet|cfc104-project1-wordpress-subnet-public|
+private subnet|cfc104-project1-wordpress-subnet-private|
+
+
+
+Name | Value
+-|-
+EC2|cfc104-project1-wordpress-ec2-public
+Amazon Machine Image (AMI)|Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type
+Instance Type|t2.micro
+Network|cfc104-project1-wordpress-VPC
+subnet|cfc104-project1-wordpress-subnet-public
+Volume Type|General Purpose SSD (gp2)
+Security Group|cfc104-project1-wordpress-sg-public
+
+
+Domain name|cfc104.project1.com
+RDS CNAME|rds.cfc104.project1.com
+
+
+S3|cfc104-project1-wordpress-s3
+
+
+
 - wordpress set up
   - [ ] Docker
     - docker-compose
-    - nginx
   - [ ] web site
   - [ ] woocommerce
+  - [ ] plugins
 
 - AWS set up
   - [ ] IAM
-  - [ ] VPC
-  - [ ] EC2
-  - [ ] RDS
-  - [ ] ~~S3~~
+  - [X] VPC
+  - [X] EC2
+  - [X] RDS
+  - [ ] S3
   - [ ] Route53(GoDaddy)
   - [ ] Cloudtrail
   - [ ] ~~CloudWatch~~
@@ -139,7 +201,7 @@ return [Summary](#summary)
   - [ ] VPC
   - [ ] GCE
   - [ ] CloudSQL
-  - [ ] ~~Cloud Storage~~
+  - [ ] Cloud Storage
   - [ ] Cloud DNS(GoDaddy)
   - [ ] ~~Cloud Audit log~~
   - [ ] ~~Cloud Monitoring~~
