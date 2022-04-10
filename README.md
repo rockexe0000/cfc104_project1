@@ -197,10 +197,10 @@ S3|cfc104-project1-wordpress-s3
   - [X] VPC
   - [X] EC2
   - [X] RDS
-  - [ ] S3
+  - [X] S3
   - [ ] Route53(private route)
   - [ ] CloudTrail
-  - [ ] CloudWatch
+  - [X] CloudWatch
   - [ ] ~~SSM~~
 
 - GCP set up
@@ -208,10 +208,10 @@ S3|cfc104-project1-wordpress-s3
   - [X] VPC
   - [X] GCE
   - [X] CloudSQL
-  - [ ] Cloud Storage
+  - [X] Cloud Storage
   - [X] Cloud DNS(private route)
-  - [X] Cloud Audit log
-  - [ ] ~~Cloud Monitoring~~
+  - [ ] Cloud Audit log
+  - [X] Cloud Monitoring
   - [ ] ~~Opsagent(optional)~~
 
 

@@ -39,6 +39,7 @@ return [Summary](#summary)
       - [Permissions -> CORS](#permissions---cors)
       - [add media-cloud user](#add-media-cloud-user)
         - [Create policy](#create-policy)
+  - [CloudTrail](#cloudtrail)
 
 
 
@@ -624,6 +625,53 @@ Sample IAM JSON Policy
 ![](fig/20220409111109.png)
 
 ![](fig/20220409111134.png)
+
+
+
+
+## CloudTrail
+return [Summary](#summary)
+
+
+cfc104-project1-wordpress-CloudTrail
+
+![](fig/20220410155050.png)
+
+![](fig/20220410155255.png)
+
+![](fig/20220410155745.png)
+
+![](fig/20220410160036.png)
+
+![](fig/20220410160129.png)
+
+![](fig/20220410160148.png)
+
+![](fig/20220410160219.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
