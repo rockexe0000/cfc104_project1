@@ -123,16 +123,22 @@ return [Summary](#summary)
 建立 wordpress 網站並在雲端維運
 
 流程概要
-  1) 本地端建置 wordpress
-  2) 將已完成的 wordpress 網站匯出
 
+  1) 本地端建置 wordpress
+  2) wordpress 網站匯出
+  3) AWS 環境建構
+  4) wordpress 網站匯入AWS環境
+  5) GCP 環境建構
+  6) wordpress 網站匯入GCP環境
+  7) 測試
 
 
 使用者角色
-- wordpress 網站維運人員
-- AWS管理員
-- GCP管理員
 
+- Wordpress website editor
+- AWS manager
+- GCP manager
+- Project manager
 
 
 建置步驟
@@ -179,31 +185,32 @@ S3|cfc104-project1-wordpress-s3
 
 
 - wordpress set up
-  - [ ] Docker
+  - [X] Docker
     - docker-compose
-  - [ ] web site
-  - [ ] woocommerce
-  - [ ] plugins
+  - [X] web site
+  - [X] plugins
+    -  woocommerce
+    - all-in-one-wp-migration
 
 - AWS set up
-  - [ ] IAM
+  - [X] IAM
   - [X] VPC
   - [X] EC2
   - [X] RDS
   - [ ] S3
-  - [ ] Route53(GoDaddy)
-  - [ ] Cloudtrail
-  - [ ] ~~CloudWatch~~
+  - [ ] Route53(private route)
+  - [ ] CloudTrail
+  - [ ] CloudWatch
   - [ ] ~~SSM~~
 
 - GCP set up
-  - [ ] IAM
-  - [ ] VPC
-  - [ ] GCE
-  - [ ] CloudSQL
+  - [X] IAM
+  - [X] VPC
+  - [X] GCE
+  - [X] CloudSQL
   - [ ] Cloud Storage
-  - [ ] Cloud DNS(GoDaddy)
-  - [ ] ~~Cloud Audit log~~
+  - [X] Cloud DNS(private route)
+  - [X] Cloud Audit log
   - [ ] ~~Cloud Monitoring~~
   - [ ] ~~Opsagent(optional)~~
 

@@ -11,7 +11,7 @@ return [Summary](#summary)
   - [push an existing repository from the command line](#push-an-existing-repository-from-the-command-line)
   - [git reset](#git-reset)
 - [wordpress config](#wordpress-config)
-- [Mysql 備份](#mysql-備份)
+- [Mysql 遷移](#mysql-遷移)
 - [codecommit](#codecommit)
   - [SSH 和 Linux、macOS 或 Unix：設定 Git 和 CodeCommit 的公有和私有金鑰](#ssh-和-linuxmacos-或-unix設定-git-和-codecommit-的公有和私有金鑰)
 - [nginx](#nginx)
@@ -154,6 +154,8 @@ Content-Disposition: attachment; filename="userdata.txt"
 
 #!/bin/bash
 yum update -y
+yum install -y amazon-cloudwatch-agent
+
 amazon-linux-extras install -y docker
 service docker start
 usermod -a -G docker ec2-user
@@ -304,7 +306,7 @@ docker exec mysql-db sh -c 'exec mysql -u user -p123456 exampledb -e "UPDATE wp_
 
 -----
 
-## Mysql 備份
+## Mysql 遷移
 return [Summary](#summary)
 
 使用在 Amazon RDS 外部運行的 MariaDB 或 MySQL 實例進行複制
@@ -315,7 +317,7 @@ local端備份
 docker exec mysql-db sh -c 'exec mysqldump --all-databases -uroot -p"123456"' > all-databases.sql
 ```
 
-還原(local -> RDS)
+遷移(local -> RDS)
 ```
 docker exec mysql-db sh -c 'mysqldump --databases {database_name} \
     --single-transaction \

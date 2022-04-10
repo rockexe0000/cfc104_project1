@@ -12,6 +12,7 @@ return [Summary](#summary)
   - [03/30](#0330)
   - [04/04](#0404)
   - [04/06](#0406)
+  - [04/08](#0408)
 
 
 
@@ -83,12 +84,13 @@ nginx config
 ## 04/06
 return [Summary](#summary)
 
-可匯入網站
+可匯入並正常顯示網站
 
+## 04/08
+return [Summary](#summary)
 
-
-
-
+AWS s3 設定
+wordpress 多媒體插件
 
 
 

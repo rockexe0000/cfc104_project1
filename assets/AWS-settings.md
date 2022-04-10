@@ -1,4 +1,4 @@
-
+#  AWS set up
 
 
 
@@ -6,34 +6,39 @@
 ## Summary
 return [Summary](#summary)
 
-- [Summary](#summary)
-- [IAM](#iam)
-  - [Group](#group)
-  - [User](#user)
-  - [Account Alias](#account-alias)
-  - [Billing Alarms](#billing-alarms)
-- [EC2](#ec2)
-- [ECR(沒用到)](#ecr沒用到)
-- [RDS](#rds)
-- [VPC](#vpc)
-  - [internet gateway](#internet-gateway)
-  - [igw attach to VPC](#igw-attach-to-vpc)
-  - [subnet](#subnet)
-    - [public subnet](#public-subnet)
-    - [private subnet](#private-subnet)
-  - [~~NAT gateway for private subnet~~](#nat-gateway-for-private-subnet)
-  - [route table](#route-table)
-  - [route table for private subnet](#route-table-for-private-subnet)
-  - [test ssh 172.16.0.10 -> 172.16.101.10](#test-ssh-17216010---1721610110)
-- [godaddy DNS 管理](#godaddy-dns-管理)
-- [Route53](#route53)
-  - [Route53 private hosted zones add RDS](#route53-private-hosted-zones-add-rds)
-- [S3](#s3)
-  - [Automatically uploads media to Amazon S3](#automatically-uploads-media-to-amazon-s3)
-    - [Properties -> Transfer acceleration -> Enabled](#properties---transfer-acceleration---enabled)
-    - [Permissions -> CORS](#permissions---cors)
-    - [add media-cloud user](#add-media-cloud-user)
-      - [Create policy](#create-policy)
+- [AWS set up](#aws-set-up)
+  - [Summary](#summary)
+  - [IAM](#iam)
+    - [Group](#group)
+    - [User](#user)
+    - [Account Alias](#account-alias)
+  - [CloudWatch](#cloudwatch)
+    - [Billing Alarms](#billing-alarms)
+      - [帳單超過 10 USD 通知](#帳單超過-10-usd-通知)
+    - [EC2 Alarms](#ec2-alarms)
+      - [CPU利用率超過80%通知](#cpu利用率超過80通知)
+  - [EC2](#ec2)
+  - [~~ECR~~](#ecr)
+  - [RDS](#rds)
+  - [VPC](#vpc)
+    - [internet gateway](#internet-gateway)
+    - [igw attach to VPC](#igw-attach-to-vpc)
+    - [subnet](#subnet)
+      - [public subnet](#public-subnet)
+      - [private subnet](#private-subnet)
+    - [~~NAT gateway for private subnet~~](#nat-gateway-for-private-subnet)
+    - [route table](#route-table)
+    - [route table for private subnet](#route-table-for-private-subnet)
+    - [test ssh 172.16.0.10 -> 172.16.101.10](#test-ssh-17216010---1721610110)
+  - [godaddy DNS 管理](#godaddy-dns-管理)
+  - [Route53](#route53)
+    - [Route53 private hosted zones add RDS](#route53-private-hosted-zones-add-rds)
+  - [S3](#s3)
+    - [Automatically uploads media to Amazon S3](#automatically-uploads-media-to-amazon-s3)
+      - [Properties -> Transfer acceleration -> Enabled](#properties---transfer-acceleration---enabled)
+      - [Permissions -> CORS](#permissions---cors)
+      - [add media-cloud user](#add-media-cloud-user)
+        - [Create policy](#create-policy)
 
 
 
@@ -50,17 +55,17 @@ Name | Value
 Group name|cfc104_project
 
 
-![image20220317110912.png](./fig/image20220317110912.png)
+![image20220317110912.png](fig/image20220317110912.png)
 
-![image20220317111338.png](./fig/image20220317111338.png)
+![image20220317111338.png](fig/image20220317111338.png)
 
-![image20220317131848.png](./fig/image20220317131848.png)
+![image20220317131848.png](fig/image20220317131848.png)
 
-![image20220317132007.png](./fig/image20220317132007.png)
+![image20220317132007.png](fig/image20220317132007.png)
 
-![image20220317132037.png](./fig/image20220317132037.png)
+![image20220317132037.png](fig/image20220317132037.png)
 
-![image20220317132106.png](./fig/image20220317132106.png)
+![image20220317132106.png](fig/image20220317132106.png)
 
 
 -----
@@ -73,23 +78,23 @@ Name | Value
 -|-
 User name|cfc104_02,cfc104_03,cfc104_06,cfc104_10
 
-![image20220317132219.png](./fig/image20220317132219.png)
+![image20220317132219.png](fig/image20220317132219.png)
 
-![image20220317132306.png](./fig/image20220317132306.png)
+![image20220317132306.png](fig/image20220317132306.png)
 
-![image20220317132345.png](./fig/image20220317132345.png)
+![image20220317132345.png](fig/image20220317132345.png)
 
-![image20220317132442.png](./fig/image20220317132442.png)
+![image20220317132442.png](fig/image20220317132442.png)
 
-![image20220317132709.png](./fig/image20220317132709.png)
+![image20220317132709.png](fig/image20220317132709.png)
 
-![image20220317132730.png](./fig/image20220317132730.png)
+![image20220317132730.png](fig/image20220317132730.png)
 
-![image20220317132806.png](./fig/image20220317132806.png)
+![image20220317132806.png](fig/image20220317132806.png)
 
-![image20220317132857.png](./fig/image20220317132857.png)
+![image20220317132857.png](fig/image20220317132857.png)
 
-![image20220317133333.png](./fig/image20220317133333.png)
+![image20220317133333.png](fig/image20220317133333.png)
 
 -----
 ### Account Alias
@@ -101,49 +106,113 @@ Name | Value
 Account Alias|cfc104-project01
 
 
-![image20220317162909.png](./fig/image20220317162909.png)
+![image20220317162909.png](fig/image20220317162909.png)
 
-![image20220317163127.png](./fig/image20220317163127.png)
+![image20220317163127.png](fig/image20220317163127.png)
 
 
 -----
 
+
+
+## CloudWatch
+return [Summary](#summary)
+
+使用 CloudWatch 代理從 Amazon EC2 實例和本地服務器收集指標和日誌
+<https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html>
+
+
+
+
+
+
 ### Billing Alarms
 return [Summary](#summary)
 
-![image20220317163239.png](./fig/image20220317163239.png)
 
-![image20220317163412.png](./fig/image20220317163412.png)
+#### 帳單超過 10 USD 通知
+return [Summary](#summary)
 
-![image20220317163441.png](./fig/image20220317163441.png)
 
-![image20220317163500.png](./fig/image20220317163500.png)
+![image20220317163239.png](fig/image20220317163239.png)
 
-![image20220317163839.png](./fig/image20220317163839.png)
+![image20220317163412.png](fig/image20220317163412.png)
 
-![image20220317163856.png](./fig/image20220317163856.png)
+![image20220317163441.png](fig/image20220317163441.png)
 
-![image20220317163922.png](./fig/image20220317163922.png)
+![image20220317163500.png](fig/image20220317163500.png)
 
-![image20220317164057.png](./fig/image20220317164057.png)
+![image20220317163839.png](fig/image20220317163839.png)
 
-![image20220317183612.png](./fig/image20220317183612.png)
+![image20220317163856.png](fig/image20220317163856.png)
 
-![image20220317183632.png](./fig/image20220317183632.png)
+![image20220317163922.png](fig/image20220317163922.png)
 
-![image20220317183723.png](./fig/image20220317183723.png)
+![image20220317164057.png](fig/image20220317164057.png)
 
-![image20220317183917.png](./fig/image20220317183917.png)
+![image20220317183612.png](fig/image20220317183612.png)
 
-![image20220317183945.png](./fig/image20220317183945.png)
+![image20220317183632.png](fig/image20220317183632.png)
 
-![image20220317184028.png](./fig/image20220317184028.png)
+![image20220317183723.png](fig/image20220317183723.png)
 
-![image20220317184102.png](./fig/image20220317184102.png)
+![image20220317183917.png](fig/image20220317183917.png)
 
-![image20220317184120.png](./fig/image20220317184120.png)
+![image20220317183945.png](fig/image20220317183945.png)
 
-![image20220317184141.png](./fig/image20220317184141.png)
+![image20220317184028.png](fig/image20220317184028.png)
+
+![image20220317184102.png](fig/image20220317184102.png)
+
+![image20220317184120.png](fig/image20220317184120.png)
+
+![image20220317184141.png](fig/image20220317184141.png)
+
+
+
+-----
+
+
+### EC2 Alarms
+return [Summary](#summary)
+
+#### CPU利用率超過80%通知
+return [Summary](#summary)
+
+cfc104-project1-wordpress-ec2-public
+cfc104-project1-wordpress-ec2-CPU-topic
+
+![](fig/20220410095447.png)
+
+![](fig/20220410095536.png)
+
+![](fig/20220410095626.png)
+
+![](fig/20220410095709.png)
+
+![](fig/20220410110355.png)
+
+![](fig/20220410110707.png)
+
+![](fig/20220410110834.png)
+
+![](fig/20220410112126.png)
+
+![](fig/20220410113403.png)
+
+![](fig/20220410112324.png)
+
+![](fig/20220410113635.png)
+
+![](fig/20220410113923.png)
+
+![](fig/20220410114044.png)
+
+![](fig/20220410114103.png)
+
+![](fig/20220410114122.png)
+
+
 
 
 -----
@@ -193,7 +262,7 @@ Security Group|cfc104-project1-wordpress-sg-public
 
 -----
 
-## ECR(沒用到)
+## ~~ECR~~
 return [Summary](#summary)
 
 ![](fig/20220323090557.png)
@@ -387,6 +456,8 @@ cfc104.project1.com
 ![](fig/20220407145220.png)
 
 ### Route53 private hosted zones add RDS
+return [Summary](#summary)
+
 
 RDS Endpoint
 cfc104-project1-wordpress-rds.cn08hpayvo0z.us-east-1.rds.amazonaws.com
@@ -553,25 +624,6 @@ Sample IAM JSON Policy
 ![](fig/20220409111109.png)
 
 ![](fig/20220409111134.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
