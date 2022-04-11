@@ -42,7 +42,7 @@ return [Summary](#summary)
   - [CloudTrail](#cloudtrail)
 
 
-
+-----
 
 ## IAM
 return [Summary](#summary)
@@ -307,7 +307,7 @@ cfc104-project1-wordpress-rds
 ![](fig/20220324141859.png)
 
 
-
+-----
 
 ## VPC
 return [Summary](#summary)
@@ -434,14 +434,14 @@ return [Summary](#summary)
 ![](fig/20220331091948.png)
 
 
-
+-----
 
 ## godaddy DNS 管理
 return [Summary](#summary)
 
 ![](fig/20220406090821.png)
 
-
+-----
 
 ## Route53
 return [Summary](#summary)
@@ -469,7 +469,7 @@ cfc104-project1-wordpress-rds.cn08hpayvo0z.us-east-1.rds.amazonaws.com
 
 ![](fig/20220407150653.png)
 
-
+-----
 
 ## S3
 return [Summary](#summary)
@@ -627,7 +627,7 @@ Sample IAM JSON Policy
 ![](fig/20220409111134.png)
 
 
-
+-----
 
 ## CloudTrail
 return [Summary](#summary)

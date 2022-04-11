@@ -124,20 +124,17 @@ return [Summary](#summary)
 
 流程概要
 
-  1) 本地端建置 wordpress
-  2) wordpress 網站匯出
-  3) AWS 環境建構
-  4) wordpress 網站匯入AWS環境
-  5) GCP 環境建構
-  6) wordpress 網站匯入GCP環境
-  7) 測試
+  1) 本地端建置wordpress網站
+  2) wordpress網站匯出
+  3) AWS/GCP 環境建構
+  4) wordpress網站匯入AWS/GCP環境
+  5) 測試
 
 
 使用者角色
 
 - Wordpress website editor
-- AWS manager
-- GCP manager
+- AWS/GCP manager
 - Project manager
 
 
