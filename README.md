@@ -198,8 +198,8 @@ S3|cfc104-project1-wordpress-s3
   - [X] EC2
   - [X] RDS
   - [X] S3
-  - [ ] Route53(private route)
-  - [ ] CloudTrail
+  - [X] Route53(private route)
+  - [X] CloudTrail
   - [X] CloudWatch
   - [ ] ~~SSM~~
 
