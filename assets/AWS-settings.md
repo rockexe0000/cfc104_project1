@@ -40,6 +40,10 @@ return [Summary](#summary)
       - [add media-cloud user](#add-media-cloud-user)
         - [Create policy](#create-policy)
   - [CloudTrail](#cloudtrail)
+  - [SSM](#ssm)
+    - [建立一個 IAM 角色，該角色將用於授予 Systems Manager 權限](#建立一個-iam-角色該角色將用於授予-systems-manager-權限)
+    - [EC2 -> Actions -> Security -> Modify IAM role](#ec2---actions---security---modify-iam-role)
+    - [Systems Manager -> Node Management -> Fleet Manager](#systems-manager---node-management---fleet-manager)
 
 
 -----
@@ -627,6 +631,22 @@ Sample IAM JSON Policy
 ![](fig/20220409111134.png)
 
 
+
+
+
+
+
+![](fig/20220412125623.png)
+
+
+
+
+
+
+
+
+
+
 -----
 
 ## CloudTrail
@@ -650,39 +670,71 @@ cfc104-project1-wordpress-CloudTrail
 ![](fig/20220410160219.png)
 
 
+-----
+
+
+## SSM
+return [Summary](#summary)
+
+
+AWS Systems Manager 節點管理
+<https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-instances-and-nodes.html>
+
+
+使用 AWS Systems Manager 在 EC2 執行個體上
+<https://aws.amazon.com/tw/getting-started/hands-on/remotely-run-commands-ec2-instance-systems-manager/>
 
 
 
 
+### 建立一個 IAM 角色，該角色將用於授予 Systems Manager 權限
+return [Summary](#summary)
+
+
+cfc104-project1-wordpress-SSM-Role
+
+AmazonEC2RoleforSSM
+
+
+![](fig/20220411184308.png)
+
+![](fig/20220411184452.png)
+
+![](fig/20220411184546.png)
+
+![](fig/20220411184730.png)
+
+![](fig/20220411184958.png)
+
+![](fig/20220411185017.png)
+
+![](fig/20220411185306.png)
 
 
 
+### EC2 -> Actions -> Security -> Modify IAM role
+return [Summary](#summary)
+
+
+![](fig/20220411192355.png)
+
+![](fig/20220411192601.png)
+
+![](fig/20220412082525.png)
 
 
 
+### Systems Manager -> Node Management -> Fleet Manager
+return [Summary](#summary)
 
 
+![](fig/20220412083902.png)
 
+![](fig/20220412084217.png)
 
+![](fig/20220412084603.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![](fig/20220412085301.png)
 
 
 

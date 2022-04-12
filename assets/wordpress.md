@@ -535,6 +535,8 @@ chmod +x init-letsencrypt.sh
 sudo ./init-letsencrypt.sh
 ```
 
+![](fig/20220412095042.png)
+
 
 ![](fig/20220331170746.png)
 
