@@ -39,11 +39,14 @@ return [Summary](#summary)
       - [Permissions -> CORS](#permissions---cors)
       - [add media-cloud user](#add-media-cloud-user)
         - [Create policy](#create-policy)
+    - [S3使用前](#s3使用前)
+    - [S3使用後](#s3使用後)
   - [CloudTrail](#cloudtrail)
   - [SSM](#ssm)
     - [建立一個 IAM 角色，該角色將用於授予 Systems Manager 權限](#建立一個-iam-角色該角色將用於授予-systems-manager-權限)
     - [EC2 -> Actions -> Security -> Modify IAM role](#ec2---actions---security---modify-iam-role)
     - [Systems Manager -> Node Management -> Fleet Manager](#systems-manager---node-management---fleet-manager)
+  - [Pricing Calculator](#pricing-calculator)
 
 
 -----
@@ -634,11 +637,13 @@ Sample IAM JSON Policy
 
 
 
-
+### S3使用前
 
 ![](fig/20220412125623.png)
 
+### S3使用後
 
+![](fig/20220413184022.png)
 
 
 
@@ -735,6 +740,21 @@ return [Summary](#summary)
 ![](fig/20220412084603.png)
 
 ![](fig/20220412085301.png)
+
+
+
+
+## Pricing Calculator
+return [Summary](#summary)
+
+https://calculator.aws/#/estimate?id=2ccf19c71ca8cdd66a7154f3c96df1fa45153c76
+
+
+
+![](fig/20220412211906.png)
+
+
+
 
 
 

@@ -10,13 +10,13 @@ return [Summary](#summary)
   - [Resource naming rules (including tags)](#resource-naming-rules-including-tags)
   - [CI/CD](#cicd)
   - [AWS and GCP service mapping](#aws-and-gcp-service-mapping)
-  - [AWS and GCP 比較](#aws-and-gcp-比較)
-  - [總結](#總結)
   - [Architecture Diagram](#architecture-diagram)
     - [AWS](#aws)
   - [Todo list](#todo-list)
   - [AWS settings](#aws-settings)
   - [Wordpress document](#wordpress-document)
+  - [AWS and GCP 比較](#aws-and-gcp-比較)
+  - [總結](#總結)
   - [Note](#note)
   - [Work log](#work-log)
   - [Meeting minutes](#meeting-minutes)
@@ -105,67 +105,7 @@ DNS 服務|Route 53|Cloud DNS
 
 > https://comparecloud.in/?fbclid=IwAR3ACOiRt23TB8E7ncLsmDSDSHbTF4YxMIymT2rJWwusZfgMVYX1TPVwl0M
 
------
-## AWS and GCP 比較
-return [Summary](#summary)
 
-基礎設施
-比較|AWS 服務|GCP 服務
--|-|-
-基礎設施|AWS 目前在 16 個地理區域（ regions ）上有 42 個可用區域（ zones ），在已公告的計畫中顯示會在逐步新增 8 個可用區域和 3 個地理區域。|GCP 目前在 8 個地理區域(其中一個就在臺灣)上擁有 23 個可用區域。且擁有超過 100 個網路連接點（PoPs ）和數十萬英里的自有光纖網路（ fiber optic cable ），預計在今年結束前再新增 10 個可用區域，急起直追。
-
-流量費用
-
-比較|AWS 服務|GCP 服務
--|-|-
-試用方案|新帳號第一年內部分服務每月有免費額度註1-4 可以使用|啟用試用方案註1-1 後第一年內有 300 美金額度可以試用所有服務組合（部分功能受限）
-計費方式|以時計費|以分計費
-優惠|預繳 1 或 3 年，可享有最低 5 折的優惠|連續使用滿一個月可獲7折優惠。綁定 1 年或 3 年有機會獲得 43 折優惠。部分服務項目有永久免費額度註1-2
-估算工具|Simple Monthly Calculator註1-5|Pricing Calculator註1-3
-
-
-註1-1 試用方案 https://cloud.google.com/free/?hl=zh-tw
-註1-2 永久免費額度 https://cloud.google.com/free/docs/always-free-usage-limits
-註1-3 Pricing Calculator https://cloud.google.com/products/calculator/
-註1-4 免費額度 https://aws.amazon.com/tw/free/
-註1-5 Sample Monthly Calculator http://calculator.s3.amazonaws.com/index.html 
-
-
-
-架構與運算能力
-通則當然是運算能力愈強愈好，但考量到運算能力往往和價位成正比，所以選擇三個頂尖供應商之中最符合成本效益又使用者經驗良好的很重要。以下以規格相近的運算主機來做比較：
-
-比較|AWS 服務|GCP 服務
--|-|-
-地區|美國|美國
-機器類型|m3.medium|n1-standard-1
-虛擬 CPU 數|1|1
-記憶體|3.75 GB|3.75 GB
-作業系統|Linux|Linux
-硬碟空間|50 GB|50 GB
-硬碟費用|USD$5|USD$2
-主機費用|USD$49.05|USD$34.67
-每月費用(主機+硬碟)|USD$54.05|USD$26.27(持續使用折扣註2-1 )
-優惠後費用(主機+硬碟)|USD$40.04(預留執行個體一年無需預付)|USD$23.84(承諾使用折扣註2-2 一年)
-
-註 2-1 持續使用折扣 https://cloud.google.com/compute/docs/sustained-use-discounts
-註 2-2 承諾使用折扣 https://cloud.google.com/compute/docs/instances/signing-up-committed-use-discounts
-
-
-referance:<https://www.mile.cloud/zh/resources/blog/cloud-platform-traffic-cost-comparison-google-GCP-Amazon-Microsoft_185>
-
-
------
-
-## 總結
-
-在雲端運算的領域，其實很難判定哪個供應商是真正的贏家，而這份簡報也沒有要將雲端供應商分高下，因為 AWS 和 GCP 有各自的優點和吸引人的地方 —— AWS 是最經驗最豐富的，GCP 有對使用者較佳的定價策略，而且它還有機器學習方面的技術優勢。
-
-所以回到簡報前面的問題，我們應該選擇哪一個雲端供應商為自己提供服務？答案是沒有標準答案，要依照個人或組織的使用需求和用量，決定最適合的雲端服務供應商。
-
-
-
-https://aprilyang.home.blog/2021/06/24/aws-azure-gcp/
 
 -----
 
@@ -292,6 +232,103 @@ return [Summary](#summary)
 
 > [wordpress](./assets/wordpress.md)
 
+
+-----
+
+
+## AWS and GCP 比較
+return [Summary](#summary)
+
+基礎設施
+比較|AWS 服務|GCP 服務
+-|-|-
+基礎設施|AWS 目前在 16 個地理區域（ regions ）上有 42 個可用區域（ zones ），在已公告的計畫中顯示會在逐步新增 8 個可用區域和 3 個地理區域。|GCP 目前在 8 個地理區域(其中一個就在臺灣)上擁有 23 個可用區域。且擁有超過 100 個網路連接點（PoPs ）和數十萬英里的自有光纖網路（ fiber optic cable ），預計在今年結束前再新增 10 個可用區域，急起直追。
+
+
+AWS 全球機房分布
+![](assets/fig/20220413083309.png)
+
+
+Google Cloud 全球機房分布
+![](assets/fig/20220413083215.png)
+
+
+
+
+
+流量費用
+
+比較|AWS 服務|GCP 服務
+-|-|-
+試用方案|新帳號第一年內部分服務每月有免費額度註1-4 可以使用|啟用試用方案註1-1 後第一年內有 300 美金額度可以試用所有服務組合（部分功能受限）
+計費方式|以時計費|以分計費
+優惠|預繳 1 或 3 年，可享有最低 5 折的優惠|連續使用滿一個月可獲7折優惠。綁定 1 年或 3 年有機會獲得 43 折優惠。部分服務項目有永久免費額度註1-2
+估算工具|Simple Monthly Calculator註1-5|Pricing Calculator註1-3
+
+
+註1-1 試用方案 https://cloud.google.com/free/?hl=zh-tw
+註1-2 永久免費額度 https://cloud.google.com/free/docs/always-free-usage-limits
+註1-3 Pricing Calculator https://cloud.google.com/products/calculator/
+註1-4 免費額度 https://aws.amazon.com/tw/free/
+註1-5 Sample Monthly Calculator http://calculator.s3.amazonaws.com/index.html 
+
+
+
+架構與運算能力
+通則當然是運算能力愈強愈好，但考量到運算能力往往和價位成正比，所以選擇三個頂尖供應商之中最符合成本效益又使用者經驗良好的很重要。以下以規格相近的運算主機來做比較：
+
+比較|AWS 服務|GCP 服務
+-|-|-
+地區|美國|美國
+機器類型|m3.medium|n1-standard-1
+虛擬 CPU 數|1|1
+記憶體|3.75 GB|3.75 GB
+作業系統|Linux|Linux
+硬碟空間|50 GB|50 GB
+硬碟費用|USD$5|USD$2
+主機費用|USD$49.05|USD$34.67
+每月費用(主機+硬碟)|USD$54.05|USD$26.27(持續使用折扣註2-1 )
+優惠後費用(主機+硬碟)|USD$40.04(預留執行個體一年無需預付)|USD$23.84(承諾使用折扣註2-2 一年)
+
+註 2-1 持續使用折扣 https://cloud.google.com/compute/docs/sustained-use-discounts
+註 2-2 承諾使用折扣 https://cloud.google.com/compute/docs/instances/signing-up-committed-use-discounts
+
+
+
+
+比較|AWS 服務|GCP 服務
+-|-|-
+帳號基本單元|一個產品一個email account|一個產品一個Project
+帳號管理|每個雲帳號有自己的子帳號|使用Email作為個人身分驗證
+資料分布|限定在特定Region與機房|天然高可用，應用隨佈隨用
+資料加密|預設不加密|預設就加密
+機器計費|按機器台數做計費基礎|按CPU用量，做細粒度計費
+機器連線|再本地使用金鑰進行連線|當下連線，當下隨機生成與棄用
+資源存取|每個資源的存取方式不同|均需要經過稽核安全連線
+軟體開發|將認證存在本地端，在本地進行開發|透過瀏覽器連線到雲端IDE，即時開發
+
+
+
+
+referance:
+
+雲端平台流量費用大比拼
+<https://www.mile.cloud/zh/resources/blog/cloud-platform-traffic-cost-comparison-google-GCP-Amazon-Microsoft_185>
+
+比較 3 大雲端供應商的差異
+<https://aprilyang.home.blog/2021/06/24/aws-azure-gcp/>
+
+-----
+
+## 總結
+
+在雲端運算的領域，其實很難判定哪個供應商是真正的贏家，而這份簡報也沒有要將雲端供應商分高下，因為 AWS 和 GCP 有各自的優點和吸引人的地方 —— AWS 是最經驗最豐富的，GCP 有對使用者較佳的定價策略，而且它還有機器學習方面的技術優勢。
+
+所以回到簡報前面的問題，我們應該選擇哪一個雲端供應商為自己提供服務？答案是沒有標準答案，要依照個人或組織的使用需求和用量，決定最適合的雲端服務供應商。
+
+
+
+https://aprilyang.home.blog/2021/06/24/aws-azure-gcp/
 
 
 -----
