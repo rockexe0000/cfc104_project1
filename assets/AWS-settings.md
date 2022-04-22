@@ -46,6 +46,8 @@ return [Summary](#summary)
     - [建立一個 IAM 角色，該角色將用於授予 Systems Manager 權限](#建立一個-iam-角色該角色將用於授予-systems-manager-權限)
     - [EC2 -> Actions -> Security -> Modify IAM role](#ec2---actions---security---modify-iam-role)
     - [Systems Manager -> Node Management -> Fleet Manager](#systems-manager---node-management---fleet-manager)
+    - [為混合環境 (Linux) 安裝 SSM 代理](#為混合環境-linux-安裝-ssm-代理)
+      - [打開高級實例層](#打開高級實例層)
   - [Pricing Calculator](#pricing-calculator)
 
 
@@ -742,6 +744,80 @@ return [Summary](#summary)
 ![](fig/20220412085301.png)
 
 
+### 為混合環境 (Linux) 安裝 SSM 代理
+
+https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html
+
+
+
+https://s3.ap-northeast-1.amazonaws.com/amazon-ssm-ap-northeast-1/latest/linux_amd64/amazon-ssm-agent.rpm
+
+
+
+![](fig/20220419164202.png)
+
+![](fig/20220419165238.png)
+
+![](fig/20220419165339.png)
+
+```
+Activation Code   sU+5fsUX4W7cALtoAp13
+Activation ID   4601fdcf-5568-4c28-8653-f7839f681323
+Region   us-east-1
+```
+
+
+安裝 SSM 代理
+Amazon Linux 2、RHEL 7.x、Oracle Linux 和 CentOS 7.x
+```
+mkdir /tmp/ssm
+curl https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm -o /tmp/ssm/amazon-ssm-agent.rpm
+sudo yum install -y /tmp/ssm/amazon-ssm-agent.rpm
+sudo systemctl stop amazon-ssm-agent
+sudo -E amazon-ssm-agent -register -code "sU+5fsUX4W7cALtoAp13" -id "4601fdcf-5568-4c28-8653-f7839f681323" -region "us-east-1"
+sudo systemctl start amazon-ssm-agent
+```
+
+![](fig/20220419170913.png)
+
+
+解決錯誤
+![](fig/20220419160842.png)
+```
+sudo cp /etc/amazon/ssm/seelog.xml.template /etc/amazon/ssm/seelog.xml
+sudo find / -name "seelog.xml.template"
+ls /snap/amazon-ssm-agent/
+ls /snap/amazon-ssm-agent/current/
+sudo mkdir -p /etc/amazon/ssm/
+sudo cp /snap/amazon-ssm-agent/current/seelog.xml.template /etc/amazon/ssm/seelog.xml
+
+sudo /snap/amazon-ssm-agent/current/amazon-ssm-agent -register -code "GIpOr218Vx3v5G+3p6Rp" -id "164e0626-cb16-4918-aa50-947c80627e2a" -region "ap-northeast-1"
+
+
+確認狀況
+sudo systemctl start snap.amazon-ssm-agent.amazon-ssm-agent.service
+sudo systemctl status snap.amazon-ssm-agent.amazon-ssm-agent.service
+```
+
+
+#### 打開高級實例層
+
+![](fig/20220419173817.png)
+
+![](fig/20220419174240.png)
+
+![](fig/20220419184100.png)
+
+![](fig/20220419184358.png)
+
+![](fig/20220419184503.png)
+
+
+
+
+
+
+
 
 
 ## Pricing Calculator
@@ -754,9 +830,7 @@ https://calculator.aws/#/estimate?id=2ccf19c71ca8cdd66a7154f3c96df1fa45153c76
 ![](fig/20220412211906.png)
 
 
-
-
-
+![](fig/20220421083443.png)
 
 
 

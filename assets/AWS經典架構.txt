@@ -1,0 +1,71 @@
+建構三層式雲端架構：
+
+1.IAM 的前置設定與使用:
+
+IAM裡有Poilcy重要元件，規範使用AWS資源的權限。
+(1)Identity-based policy→針對某個人(User/Group/Role)
+(2)Resource-based policy→站在資源本身，規範誰可以使用Service。
+
+2.VPC 環境建置、資料庫創建:
+
+AWS VPC的網路流通，是透過Route Table 的設定，搭配NAT、IGW來連通內外網。
+
+△兩個Private Subnet的溝通方式:
+(1)在Private Subnet內放置兩台EC2→因為在同一個空間，所以彼此能進行溝通。
+(2)讓兩個不同的Private Subnet內的EC2進行溝通→必須使用到Route Table。
+
+Route Table設定〈目的地IP〉
+               〈下一站要去哪〉
+
+△Public Subnet與Internet的溝通方式:
+Public Subnet是讓內部網路與外界Internet溝通。
+讓Public Subnet中的EC2可以連到Internet→必須使用到Route Table。
+
+Route Table設定〈目的地IP〉→Internet
+               〈下一站要去哪〉→放置於VPC上的IGW
+
+△Private Subnet與Internet的溝通方式:
+讓Private Subnet中的EC2可以連到Internet→必須使用到Route Table。
+
+Route Table設定〈目的地IP〉→Internet
+               〈下一站要去哪〉→放置於Public Subnet上的NAT GW
+
+RDS可以幫助使用者快速建立資料庫。
+RDS = EC2 + DB software + EBS volumes (+ EBS Snapshot)
+
+RDS提供(1)Primary/Standby的同步備份
+       (2)Read replica的分擔流量                               
+       (3)EBS Snapshot和transaction log(on S3)的定期備份   
+
+3.EC2 Instance 建立
+
+EC2配合VPC控管網路進出虛擬機。
+
+EC2 Instance 裡面有一個重要元件AMI來決定我們的作業系統。
+每次在建立 EC2 Instance 時就要選擇使用何種 AMI。
+在 AWS Console 建立一台 EC2，會連接許多子服務。
+
+Permission 權限
+AWS管理權限IAM Role，不能直接被EC2 Instance使用，需要Instance Profile來把它們串起來。
+Instance Profile會將IAM Role轉換為EC2 Instance可以使用的形式，來管控 EC2 Instance可以使用哪種權限以及AWS服務。
+
+4.資料庫連結、資料庫初始資料的設立
+
+透過EC2連進去在 Primary Subnet的資料庫。
+
+5.建立後端伺服器 
+
+6.前端伺服器與後端伺服器的連結、頁面內容互動與修改
+
+
+
+AWS S3→Create、Delete、(不能Edit)
+
+儲存空間S3能夠無上限，不停地存放!
+缺點:不能對檔案做修改。
+
+S3是分散式系統，AWS會一次啟動多台Server來應付所有的S3請求→S3 Scaling
+
+△讓S3儲存空間發揮更好的效用:
+少一點Avaliability、Retrieve Time，節省儲存和拿取資料的成本，
+透過Lifecycle Management得到較低的移動資料成本。
