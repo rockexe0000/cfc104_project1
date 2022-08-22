@@ -50,6 +50,7 @@ return [Summary](#summary)
     - [為混合環境 (Linux) 安裝 SSM 代理](#為混合環境-linux-安裝-ssm-代理)
       - [打開高級實例層](#打開高級實例層)
   - [Pricing Calculator](#pricing-calculator)
+  - [AWS 故障排除 - Trouble Shooting](#aws-故障排除---trouble-shooting)
 
 
 -----
@@ -848,6 +849,75 @@ https://calculator.aws/#/estimate?id=2ccf19c71ca8cdd66a7154f3c96df1fa45153c76
 
 ![](fig/20220421083443.png)
 
+
+## AWS 故障排除 - Trouble Shooting
+return [Summary](#summary)
+
+```
+[ec2-user@ip-172-16-0-10 my_wordpress]$ docker-compose down
+Failed to write all bytes for _cffi_backend.cpython-37m-x86_64-linux-gnu.so
+fwrite: No space left on device
+```
+![](fig/20220819105109.png)
+
+
+```
+sudo df -h
+
+[ec2-user@ip-172-16-0-10 /]$ sudo df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        474M     0  474M   0% /dev
+tmpfs           483M     0  483M   0% /dev/shm
+tmpfs           483M   19M  465M   4% /run
+tmpfs           483M     0  483M   0% /sys/fs/cgroup
+/dev/xvda1      8.0G  8.0G  428K 100% /
+tmpfs            97M     0   97M   0% /run/user/1000
+overlay         8.0G  8.0G  428K 100% /var/lib/docker/overlay2/f36b12a0d3425ee11aafd483dbd26566df5e4e04b0c559a346f02bd9471dfa58/merged
+```
+
+查哪個檔案太大
+```
+du -shx /*
+
+[root@ip-172-16-0-10 ~]# du -shx /*
+0       /bin
+84M     /boot
+0       /dev
+35M     /etc
+400K    /home
+0       /lib
+0       /lib64
+0       /local
+0       /media
+0       /mnt
+612M    /my_wordpress
+208M    /opt
+du: cannot access ‘/proc/8561/task/8561/fd/3’: No such file or directory
+du: cannot access ‘/proc/8561/task/8561/fdinfo/3’: No such file or directory
+du: cannot access ‘/proc/8561/fd/3’: No such file or directory
+du: cannot access ‘/proc/8561/fdinfo/3’: No such file or directory
+0       /proc
+52K     /root
+708K    /run
+0       /sbin
+0       /srv
+0       /sys
+184K    /tmp
+1.6G    /usr
+5.1G    /var
+```
+
+
+
+直接增加空間
+
+https://aws.plainenglish.io/fast-way-to-fix-aws-ec2-instance-error-no-space-left-on-the-disk-eb6e6f2bf0fe
+
+
+/var/lib/docker/overlay2 佔用很大，清理Docker佔用的磁碟空間，遷移 /var/lib/docker 目錄
+
+
+https://www.gushiciku.cn/pl/gpxj/zh-tw
 
 
 
